@@ -1,0 +1,4 @@
+[
+  {"senior_citizen":0,"tenure":6,"monthly_charges":89.5,"total_charges":521.0,"avg_monthly_paid":86.83,"contract":"Month-to-month","internet_service":"Fiber optic","payment_method":"Electronic check","tech_support":"No","paperless_billing":"Yes","online_security":"No"},
+  {"senior_citizen":0,"tenure":60,"monthly_charges":44.0,"total_charges":2630.0,"avg_monthly_paid":43.83,"contract":"Two year","internet_service":"DSL","payment_method":"Credit card (automatic)","tech_support":"Yes","paperless_billing":"No","online_security":"Yes"}
+]
