@@ -1,0 +1,48 @@
+DATA SCIENCE II - ENTREGA FINAL
+EVIDENCIA DE VALIDACION INTEGRAL - 31/10/2026
+Fuente: salida de PowerShell compartida por el estudiante luego de ejecutar .\VALIDAR_TODO.cmd en Windows.
+
+[1/5] Entorno virtual: OK
+[2/5] Dependencias de requirements.txt: OK
+[3/5] Pipeline integral desde cero: OK
+01/04 INGESTA - API HTTP: fuente=demo, registros=850
+02/04 ETL - Polars lazy + DuckDB + Parquet: limpios=850, invalidos=0
+03/04 SQLALCHEMY 2 - Persistencia SQLite: filas_db=850
+04/04 SCIKIT-LEARN - Pipeline + GridSearchCV: OK
+TEST accuracy: 0.6412
+TEST precision: 0.5696
+TEST recall: 0.625
+TEST f1: 0.596
+TEST roc_auc: 0.6834
+Matriz confusion: [[64, 34], [27, 45]]
+ENTREGA FINAL - PIPELINE COMPLETO: OK
+
+[4/5] Inferencia con modelo entrenado: OK
+Cliente nuevo 1: churn_predicho=1, probabilidad=0.869
+Cliente nuevo 2: churn_predicho=0, probabilidad=0.110
+INFERENCIA: OK
+
+[5/5] Pruebas automatizadas: OK
+- test_01_demo_es_determinista: ok
+- test_02_api_http_real_contesta_json: ok
+- test_03_esquema_csv_validado: ok
+- test_09_api_no_acepta_csv_demasiado_corto: ok
+- test_10_fixture_no_tiene_ids_repetidos: ok
+- test_06_etl_real_y_estructura: ok
+- test_07_persistencia_idempotente_y_ml_desde_db: ok
+- test_08_pipeline_api_real_http_etl_bd_y_modelo: ok
+- test_13_conflicto_de_id_no_se_oculta: ok
+- test_14_cambio_de_fuente_no_contamina_sqlite: ok
+- test_04_orm_declarative_y_tabla: ok
+- test_05_entrenamiento_sin_fuga_y_archivos: ok
+- test_11_pipeline_ignora_categoria_desconocida: ok
+- test_12_mapeo_id_es_pk_y_restricciones: ok
+
+Ran 14 tests in 2.828s
+OK
+TODO CORRECTO: revise que NO haya tests skipped.
+
+NOTAS:
+- Las metricas son del modo demo con datos sinteticos; no representan evaluacion en produccion.
+- La prueba test_08 realiza ademas la integracion con API HTTP real.
+- No se registraron errores ni pruebas omitidas en la validacion final.
