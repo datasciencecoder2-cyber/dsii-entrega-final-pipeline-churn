@@ -1,3 +1,14 @@
+salidas/
+modelos/
+datos/raw/
+datos/procesados/
+*.db
+*.sqlite
+*.sqlite3
+.env
+
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
