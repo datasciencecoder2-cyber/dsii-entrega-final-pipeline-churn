@@ -20,8 +20,15 @@
 6. Repetir el paso 3 **sin** `--clean`: debe conservar la cantidad de filas y no duplicar registros.
 7. Opcional, con Internet: `py main.py --source github --clean`; comparar las métricas del dataset IBM con las de la demo y documentar cambios.
 
-## Estado de verificación del paquete inicial
+## Estado de validación definitiva (31/10/2026)
 
-La generación de archivos, compilación de Python, API HTTP local, mapeo ORM y entrenamiento ML se comprobaron en entorno de autoría. **No estaba disponible Polars ni DuckDB para completar allí la prueba de integración real**; sus pruebas están incluidas y deben correrse luego de instalar dependencias en el equipo final. Esta distinción es esencial antes de presentar un proyecto con 2 intentos de aprobación.
+El proyecto se ejecutó **desde cero en Windows con Python 3.14 y todas las dependencias instaladas** mediante `VALIDAR_TODO.cmd`. Resultado reportado por el estudiante:
 
-Cuando ejecutes en tu equipo con todas las dependencias, guardá el registro real en `evidencia/salida_final.txt` y subilo al repositorio (no copiar ejemplos inventados).
+- Ingesta mediante API HTTP: **OK**, 850 observaciones sintéticas de demostración.
+- Polars lazy + DuckDB + Parquet: **OK**, 850 registros limpios, 0 inválidos.
+- SQLAlchemy 2.0 + SQLite: **OK**, 850 filas persistidas.
+- Scikit-Learn + GridSearchCV: **OK**. En test: accuracy 0.6412, precision 0.5696, recall 0.625, F1 0.5960 y ROC-AUC 0.6834.
+- Inferencia de dos clientes nuevos: **OK**.
+- Pruebas automatizadas: **14/14 OK, sin pruebas omitidas** (`Ran 14 tests in 2.828s`).
+
+La evidencia real se conserva en `evidencia/salida_final.txt`. **Las métricas anteriores proceden del modo `demo` sintético: no son métricas de producción.**
